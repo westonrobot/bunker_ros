@@ -38,6 +38,7 @@ class BunkerROSMessenger {
   void ResetOdometry();
   void PublishStateToROS();
   void PublishSimStateToROS(double linear, double angular);
+  void GetCurrentMotionCmdForSim(double &linear, double &angular);
 
 //  void GetCurrentMotionCmdForSim(double &linear, double &angular);
 

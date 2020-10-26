@@ -51,6 +51,9 @@ set_property(TARGET bunker_messenger PROPERTY POSITION_INDEPENDENT_CODE ON)
 add_executable(bunker_base_node src/bunker_base_node.cpp)
 target_link_libraries(bunker_base_node bunker_messenger ${catkin_LIBRARIES})
 
+add_executable(bunker_base_sim_node src/bunker_base_sim_node.cpp)
+target_link_libraries(bunker_base_sim_node bunker_messenger ${catkin_LIBRARIES})
+
 
 
 #############

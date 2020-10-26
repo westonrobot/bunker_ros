@@ -101,6 +101,13 @@ void BunkerROSMessenger::PublishStateToROS() {
   last_time_ = current_time_;
 }
 
+void BunkerROSMessenger::GetCurrentMotionCmdForSim(double &linear, double &angular)
+{
+    std::lock_guard<std::mutex> guard(twist_mutex_);
+    linear = current_twist_.linear.x;
+    angular = current_twist_.angular.z;
+}
+
 void BunkerROSMessenger::PublishSimStateToROS(double linear, double angular) {
   current_time_ = ros::Time::now();
   double dt = 1.0 / sim_control_rate_;
@@ -119,11 +126,11 @@ void BunkerROSMessenger::PublishSimStateToROS(double linear, double angular) {
   status_msg.fault_code = 0x00;
   status_msg.battery_voltage = 29.5;
 
-  for (int i = 0; i < 2; ++i) {
-    status_msg.motor_states[i].current = 0;
-    status_msg.motor_states[i].rpm = 0;
-    status_msg.motor_states[i].temperature = 0;
-  }
+//  for (int i = 0; i < 2; ++i) {
+//    status_msg.motor_states[i].current = 0;
+//    status_msg.motor_states[i].rpm = 0;
+//    status_msg.motor_states[i].temperature = 0;
+//  }
 
   status_publisher_.publish(status_msg);
 
