@@ -49,7 +49,7 @@ Nvidia Jeston TX2/Xavier/XavierNX have CAN controller(s) integrated in the main 
     ```
     $rosrun bunker_bringup bringup_can2usb.bash
     ```
-*Testing command
+* Testing command
     ```
     # receiving data from can0
     $ candump can0
