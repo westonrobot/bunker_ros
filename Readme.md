@@ -34,8 +34,8 @@ Nvidia Jeston TX2/Xavier/XavierNX have CAN controller(s) integrated in the main 
 
     ```
     $ cd ~/catkin_ws/src
-    $ git clone https://github.com/agilexrobotics/agx_sdk.git
-    $ git clone https://github.com/agilexrobotics/bunker_ros.git
+    $ git clone --depth 1 https://github.com/agilexrobotics/agx_sdk.git
+    $ git clone --depth 1 https://github.com/agilexrobotics/bunker_ros.git
     $ cd ..
     $ catkin_make
     ```
