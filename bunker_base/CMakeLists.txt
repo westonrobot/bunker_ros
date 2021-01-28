@@ -15,7 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
     std_msgs
     geometry_msgs
     bunker_msgs
-    wrp_sdk
+    ugv_sdk
     tf2 
     tf2_ros
 )
